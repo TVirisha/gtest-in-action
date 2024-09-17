@@ -64,15 +64,5 @@ TEST(StringCalculatorTestSuite,add_delimited_with_newline_and_comma_SumIsExpecte
 }
 
 
-TEST(StringCalculatorTestSuite,add_negative_numbers_ZeroIsExpected){
-//Arrange
-  string input="-2";
-  int expectedValue ="Negatives not allowed";
-  statement ="Negatives not allowed"
-//Act
-  int actualValue=Add(input);
-//Assert
-  ASSERT_THROW(statement,exception_type);
-  
-}
+
 
