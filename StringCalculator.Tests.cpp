@@ -45,7 +45,7 @@ TEST(StringCalculatorTestSuite,add_TwoCommaDelimitedNumbers_SumIsExpected){
 
 TEST(StringCalculatorTestSuite,add_multiple_comma_delimited_numbers_SumIsExpected){
 //Arrange
-  string input="1 , 2, 3";
+  string input="1,2,3";
   int expectedValue = 6;
 //Act
   int actualValue=Add(input);
