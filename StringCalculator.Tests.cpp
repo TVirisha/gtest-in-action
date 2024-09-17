@@ -81,6 +81,38 @@ TEST(StringCalculatorTestSuite,add_Ignore_Number_Over_1000_SumWithoutGreaterthan
   ASSERT_EQ(actualValue, expectedValue);
 }
 
+TEST(StringCalculatorTestSuite,add_multicharacter_delimiter_OnlyDelimeterSumValueIsExpected){
+//Arrange
+  string input="//[***]\n8***2***3";
+  int expectedValue = 13;
+//Act
+  int actualValue=Add(input);
+//Assert
+  ASSERT_EQ(actualValue, expectedValue);
+}
+
+TEST(StringCalculatorTestSuite,add_multiple_delimiter_SumOnEachDelometerIsExpected){
+//Arrange
+  string input="//[*][%]\n4*2%3";
+  int expectedValue = 9;
+//Act
+  int actualValue=Add(input);
+//Assert
+  ASSERT_EQ(actualValue, expectedValue);
+}
+
+TEST(StringCalculatorTestSuite,add_multiple_multicharacter_delimiters_SumOnEachDelimetersIsExpected){
+//Arrange
+  string input="//[**][%^]\n4**1%^9";
+  int expectedValue = 14;
+//Act
+  int actualValue=Add(input);
+//Assert
+  ASSERT_EQ(actualValue, expectedValue);
+}
+
+
+
 
 
 
