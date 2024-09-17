@@ -25,8 +25,12 @@ protected:
   }
   // After Each Test Case
 void TearDown(){
-   delete dataList;
-   dataList = nullptr;
+  for (TestDataPair* ptr : dataList) {
+        delete ptr; // This deallocates the memory for each TestDataPair object
+    }
+
+    // Clear the vector
+    dataList.clear(); 
     
 };
 
