@@ -1,6 +1,22 @@
 #include "StringCalculator.h"
 #include <gtest/gtest.h>
-
+//Adding Fixtures
+//public testing::Test base class from gtest
+class StringCalculatorFixtures:public testing::Test{
+protected:
+  string input;
+  int expectedValue;
+  int actualValue;
+};
+//TESTCASE Which uses fixtures uses TEST_F Macro
+TEST_F(StringCalculatorTestSuite,add_emptyInputString_ZeroIsExpected){
+  input=" ";
+  expectedValue = 0;
+//Act
+  actualValue=Add(input);
+//Assert
+  ASSERT_EQ(actualValue, expectedValue);
+}
 //Macro by google
 TEST(StringCalculatorTestSuite,add_emptyInputString_ZeroIsExpected){
 //Arrange
