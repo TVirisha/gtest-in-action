@@ -13,6 +13,16 @@ TEST(StringCalculatorTestSuite,add_emptyInputString_ZeroIsExpected){
 }
 
 
+TEST(StringCalculatorTestSuite,add_ZeroInputString_ZeroIsExpected){
+//Arrange
+  string input="0";
+  int expectedValue = 0;
+//Act
+  int actualValue=Add(input);
+//Assert
+  ASSERT_EQ(actualValue, expectedValue);
+}
+
 TEST(StringCalculatorTestSuite,add_OneInputString_OneIsExpected){
 //Arrange
   string input="1";
@@ -22,3 +32,47 @@ TEST(StringCalculatorTestSuite,add_OneInputString_OneIsExpected){
 //Assert
   ASSERT_EQ(actualValue, expectedValue);
 }
+
+TEST(StringCalculatorTestSuite,add_TwoCommaDelimitedNumbers_SumIsExpected){
+//Arrange
+  string input="1 , 2 ";
+  int expectedValue = 3;
+//Act
+  int actualValue=Add(input);
+//Assert
+  ASSERT_EQ(actualValue, expectedValue);
+}
+
+TEST(StringCalculatorTestSuite,add_multiple_comma_delimited_numbers_SumIsExpected){
+//Arrange
+  string input="1 , 2, 3";
+  int expectedValue = 6;
+//Act
+  int actualValue=Add(input);
+//Assert
+  ASSERT_EQ(actualValue, expectedValue);
+}
+
+TEST(StringCalculatorTestSuite,add_delimited_with_newline_and_comma_SumIsExpected){
+//Arrange
+  string input=" 1/n , 2 ";
+  int expectedValue = 3;
+//Act
+  int actualValue=Add(input);
+//Assert
+  ASSERT_EQ(actualValue, expectedValue);
+}
+
+
+TEST(StringCalculatorTestSuite,add_negative_numbers_ZeroIsExpected){
+//Arrange
+  string input="-2";
+  int expectedValue ="Negatives not allowed";
+  statement ="Negatives not allowed"
+//Act
+  int actualValue=Add(input);
+//Assert
+  ASSERT_THROW(statement,exception_type);
+  
+}
+
