@@ -56,7 +56,7 @@ TEST(StringCalculatorTestSuite,add_multiple_comma_delimited_numbers_SumIsExpecte
 TEST(StringCalculatorTestSuite,add_delimited_with_newline_and_comma_SumIsExpected){
 //Arrange
   string input=" 1\n2,3";
-  int expectedValue = 3;
+  int expectedValue = 6;
 //Act
   int actualValue=Add(input);
 //Assert
