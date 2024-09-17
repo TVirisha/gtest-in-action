@@ -3,11 +3,11 @@
 /dynamic array
 #include <vector>
 
-class TestDataPair{
+class TestPair{
    string input;
    int expectedValue;
    / constructure
-   TestDatapair(string _input, int _expectedValue :input(_input) , expectedValue(_expectedValue){
+   TestPair(string _input, int _expectedValue :input(_input) , expectedValue(_expectedValue){
    }
 };
 
@@ -26,7 +26,7 @@ TEST(StringCalculatorDataDrivenTestSuite, DataDrivenTestCase){
   dataList.push_back(pair_four);
   dataList.push_back(pair_five);
   /Iterate using a range-based for loop
-     for(TestDataPair datapair:dataList){
+     for(TestPair datapair:dataList){
        int actualValue = Add(datapair.input);
        ASSERT_EQ(actualValue , datapair.expectedValue);
 }
