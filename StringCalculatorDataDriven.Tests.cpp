@@ -1,19 +1,19 @@
 #include <StringCalculator.h>
 #include <gtest/gtest.h>
-/dynamic array
+//dynamic array
 #include <vector>
 
 class TestPair{
    string input;
    int expectedValue;
-   / constructure
+   // constructor
    TestPair(string _input, int _expectedValue :input(_input) , expectedValue(_expectedValue){
    }
 };
 
 
 TEST(StringCalculatorDataDrivenTestSuite, DataDrivenTestCase){
-  /loading Data
+  //loading Data
   vector<TestDatapair> dataList
   TestPair pair_one("", 0);
   TestPair pair_two("0", 0);
