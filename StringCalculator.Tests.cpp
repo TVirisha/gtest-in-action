@@ -71,6 +71,16 @@ TEST(StringCalculatorTestSuite,add_negative_numbers_ThrowInvalidArgumentIsExpect
   
 }
 
+TEST(StringCalculatorTestSuite,add_Ignore_Number_Over_1000_SumWithoutGreaterthan1000NumberIsExpected){
+//Arrange
+  string input="42,1001,3";
+  int expectedValue = 45;
+//Act
+  int actualValue=Add(input);
+//Assert
+  ASSERT_EQ(actualValue, expectedValue);
+}
+
 
 
 
