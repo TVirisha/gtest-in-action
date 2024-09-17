@@ -63,6 +63,37 @@ TEST(StringCalculatorTestSuite,add_delimited_with_newline_and_comma_SumIsExpecte
   ASSERT_EQ(actualValue, expectedValue);
 }
 
+TEST(StringCalculatorTestSuite,add_negative_numbers_ZeroIsExpected){
+//Arrange
+  string input="-1";
+  int expectedValue = 0;
+  string statement = "
+//Act
+  int actualValue=Add(input);
+//Assert
+  ASSERT_ANY_THROW(statement)
+  
+}
+
+TEST(StringCalculatorTestSuite,add_negative_numbers_ZeroIsExpected )
+{
+    // this tests _that_ the expected exception is thrown
+    EXPECT_THROW({
+        try
+        {
+          string input="-1";
+          int expectedValue = 0;
+         int actualValue=Add(input);
+        }
+        catch( const MyException& e )
+        {
+            // and this tests that it has the correct message
+            EXPECT_STREQ( "Negatives not allowed:&input", e.what() );
+            throw;
+        }
+    }, MyException );
+}
+
 
 
 
