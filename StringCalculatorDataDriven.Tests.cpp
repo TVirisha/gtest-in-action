@@ -30,8 +30,8 @@ void TearDown(){
     }
 
     // Clear the vector
-   // dataList.clear(); 
-    
+    dataList.clear(); 
+}
 };
 
 TEST_F(StringCalculatorDataDrivenFixture,DataDrivenTestCase){
