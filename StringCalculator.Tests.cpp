@@ -63,7 +63,7 @@ TEST(StringCalculatorTestSuite,add_delimited_with_newline_and_comma_SumIsExpecte
   ASSERT_EQ(actualValue, expectedValue);
 }
 
-TEST(StringCalculatorTestSuite,add_negative_numbers_ZeroIsExpected){
+TEST(StringCalculatorTestSuite,add_negative_numbers_ThrowInvalidArgumentIsExpected){
 //Arrange
   string input="1,-2,-3,4";
 //Assert
