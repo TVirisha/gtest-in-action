@@ -67,7 +67,7 @@ TEST(StringCalculatorTestSuite,add_negative_numbers_ThrowInvalidArgumentIsExpect
 //Arrange
   string input="1,-2,-3,4";
 //Assert
-  ASSERT_THROW(int Add(input),invalid_argument);
+  ASSERT_THROW(Add(input),invalid_argument);
   
 }
 
