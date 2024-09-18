@@ -13,7 +13,7 @@ public:
 class StringCalculatorDataDrivenFixture:public testing::Test{
 
 protected:
-  vector<TestDataPair*> dataList;
+   vector<TestDataPair*> dataList;
 
    //Before Each Test Case
   void SetUp(){
