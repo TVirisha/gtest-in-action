@@ -20,7 +20,7 @@ INSTANTIATE_TEST_SUITE_P(ValidStringCalculatorInputs,StringCalculatorParameterFi
   make_tuple("1,2,3", 6)
   
 ));
-
+//GetParam is Parametric Polymorphism
 TEST_P(StringCalculatorParameterFixture,ParameterizedTest){
       input= std::get<0>(GetParam());
       expectedValue= std::get<1>(GetParam());
