@@ -24,13 +24,13 @@ protected:
       dataList.push_back(new TestDataPair { "1,2,3",6});
   }
   // After Each Test Case
-void TearDown(){
-  for (TestDataPair* ptr : dataList) {
-        delete ptr; // This deallocates the memory for each TestDataPair object
-    }
+  void TearDown(){
+      for (TestDataPair* ptr : dataList) {
+            delete ptr; // This deallocates the memory for each TestDataPair object
+        }
 
     // Clear the vector
-    dataList.clear(); 
+       dataList.clear(); 
 }
 };
 
