@@ -8,18 +8,14 @@ protected:
     int expectedValue;
     int actualValue;
 
-     void SetUp(){
+
+};
+class StringCalculatorParameterFixture:public StringCalculatorFixture, public testing::WithParamInterface<tuple<string,int>>{
+  protected:
+    void SetUp()- override{
       input= std::get<0>(GetParam());
       expectedValue= std::get<1>(GetParam());
   }
-  // After Each Test Case
-   void TearDown(){
-    delete input;
-    delete expectedValue;
-   };
-};
-class StringCalculatorParameterFixture:public StringCalculatorFixture, public testing::WithParamInterface<tuple<string,int>>{
-
 };
 //Parameter Values
 INSTANTIATE_TEST_SUITE_P(ValidStringCalculatorInputs,StringCalculatorParameterFixture,testing::Values(
