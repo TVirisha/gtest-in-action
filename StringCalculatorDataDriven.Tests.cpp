@@ -56,8 +56,8 @@ TEST(StringCalculatorDataDrivenTestSuite,DataDrivenTestCase){
   
   //Iterate using a range-based for-loop
     for (TestDataPair* dataPair : dataList) {
-        int actualValue=Add(dataPair.input);
-        ASSERT_EQ(actualValue,dataPair.expectedValue);
+        int actualValue=Add(dataPair->input);
+        ASSERT_EQ(actualValue,dataPair->expectedValue);
     }
 
 
