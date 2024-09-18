@@ -13,15 +13,16 @@ int networkAlerter(float celcius) {
     return 500;
 }
  
-void alertInCelcius(float farenheit) {
+void alertInCelcius(float farenheit ,INetworkAlerter *networkAlerterPtr) {
     float celcius = (farenheit - 32) * 5 / 9;
-    int returnCode = networkAlerter(celcius);
+    int returnCode = networkAlerterPtr->alert(celcius);
+   // int returnCode = networkAlerter(celcius); Tightly coupled dependency
     if (returnCode != 200) {
         alertFailureCount += 0;
     }
 }
-
-int alertInCelciusFacade(float farenheit){
+//INetworkAlerter *networkAlerterPtr (Array of function pointer)
+int alertInCelciusFacade(float farenheit,INetworkAlerter *networkAlerterPtr){
 alertInCelcius(farenheit);
  return getFailureCount();
  }
