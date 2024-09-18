@@ -7,6 +7,16 @@ protected:
     string input;
     int expectedValue;
     int actualValue;
+
+     void SetUp(){
+      input= std::get<0>(GetParam());
+      expectedValue= std::get<1>(GetParam());
+  }
+  // After Each Test Case
+   void TearDown(){
+    delete input;
+    delete expectedValue;
+   };
 };
 class StringCalculatorParameterFixture:public StringCalculatorFixture, public testing::WithParamInterface<tuple<string,int>>{
 
@@ -23,8 +33,8 @@ INSTANTIATE_TEST_SUITE_P(ValidStringCalculatorInputs,StringCalculatorParameterFi
 ));
 //GetParam is Parametric Polymorphism
 TEST_P(StringCalculatorParameterFixture,ParameterizedTest){
-      input= std::get<0>(GetParam());
-      expectedValue= std::get<1>(GetParam());
+      //input= std::get<0>(GetParam());
+      //expectedValue= std::get<1>(GetParam());
       actualValue=Add(input);
       ASSERT_EQ(actualValue,expectedValue);
 }
