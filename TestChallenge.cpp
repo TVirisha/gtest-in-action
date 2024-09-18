@@ -20,7 +20,7 @@ void alertInCelcius(float farenheit ,INetworkAlerter *networkAlerterPtr) {
     int returnCode = networkAlerterPtr->alert(celcius);
    // int returnCode = networkAlerter(celcius); Tightly coupled dependency
     if (returnCode != 200) {
-        alertFailureCount += 0;
+        alertFailureCount += 1;
     }
 }
 //INetworkAlerter *networkAlerterPtr (Array of function pointer)
