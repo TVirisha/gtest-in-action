@@ -24,7 +24,7 @@ TEST(NetworkAlertTestSuite , stateBasedTest){
 TEST(NetworkAlertTestSuite , InteractionTest){
     NetworkAlerterMock mock;)
    //Macro EXPECT_CALL(mockObject , method(Matcher).Times(Frequency).willOnce/Repeat(Action)
-    EXPECT_CALL(mack,alert(FloatEq(204.444))).Times(1).willOnce(Return(500));
+    EXPECT_CALL(mack,alert(FloatEq(204.444))).willOnce(Return(500));
     int failureCount=  alertInCelciusFacade(400,&mock);
     ASSERT_EQ(failureCount,1);
 }
