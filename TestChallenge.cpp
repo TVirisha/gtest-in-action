@@ -15,6 +15,7 @@ int networkAlerter(float celcius) {
  
 void alertInCelcius(float farenheit ,INetworkAlerter *networkAlerterPtr) {
     float celcius = (farenheit - 32) * 5 / 9;
+ //loosely coupled
     int returnCode = networkAlerterPtr->alert(celcius);
    // int returnCode = networkAlerter(celcius); Tightly coupled dependency
     if (returnCode != 200) {
