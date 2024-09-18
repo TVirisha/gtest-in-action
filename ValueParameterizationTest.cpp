@@ -21,7 +21,6 @@ class StringCalculatorParameterFixture:public StringCalculatorFixture, public te
 INSTANTIATE_TEST_SUITE_P(ValidStringCalculatorInputs,StringCalculatorParameterFixture,testing::Values(
   make_tuple("", 0),
   make_tuple("0", 0),
-  make_tuple("0", 10),
   make_tuple("1", 1),
   make_tuple("1,2", 3),
   make_tuple("1,2,3", 6)
